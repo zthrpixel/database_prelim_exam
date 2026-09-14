@@ -1,0 +1,38 @@
+CREATE TABLE Players (
+    player_id INTEGER PRIMARY KEY,
+    username VARCHAR(50),
+    email VARCHAR(100)
+);
+
+CREATE TABLE Developers (
+    developer_id INTEGER PRIMARY KEY,
+    name VARCHAR(100),
+    country VARCHAR(50)
+);
+
+CREATE TABLE Games (
+    game_id INTEGER PRIMARY KEY,
+    title VARCHAR(100),
+    genre VARCHAR(50),
+    developer_id INTEGER,
+    price DECIMAL(10, 2),
+    FOREIGN KEY (developer_id) REFERENCES Developers(developer_id)
+);
+
+CREATE TABLE Player_Libraries (
+    library_id INTEGER PRIMARY KEY,
+    player_id INTEGER,
+    game_id INTEGER,
+    hours_played INTEGER,
+    FOREIGN KEY (player_id) REFERENCES Players(player_id),
+    FOREIGN KEY (game_id) REFERENCES Games(game_id)
+);
+
+CREATE TABLE Reviews (
+    review_id INTEGER PRIMARY KEY,
+    player_id INTEGER,
+    game_id INTEGER,
+    rating INTEGER,
+    FOREIGN KEY (player_id) REFERENCES Players(player_id),
+    FOREIGN KEY (game_id) REFERENCES Games(game_id)
+);

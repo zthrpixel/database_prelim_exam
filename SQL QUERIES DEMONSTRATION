@@ -1,0 +1,28 @@
+Query 1: JOIN and WHERE
+SELECT Games.title, Developers.name 
+FROM Games
+JOIN Developers ON Games.developer_id = Developers.developer_id
+WHERE Games.genre = 'Action';
+
+Query 2: GROUP BY and Aggregate Function (COUNT)
+SELECT Developers.name, COUNT(Games.game_id) AS total_games
+FROM Developers
+JOIN Games ON Developers.developer_id = Games.developer_id
+GROUP BY Developers.name;
+
+Query 3: JOIN, GROUP BY, and Aggregate Function (AVG)
+SELECT Games.title, AVG(Reviews.rating) AS average_rating
+FROM Games
+JOIN Reviews ON Games.game_id = Reviews.game_id
+GROUP BY Games.title;
+
+Query 4: WHERE Clause
+SELECT player_id, game_id, hours_played 
+FROM Player_Libraries 
+WHERE hours_played > 50;
+
+Query 5: Multiple JOINs
+SELECT Players.username, Games.title 
+FROM Player_Libraries
+JOIN Players ON Player_Libraries.player_id = Players.player_id
+JOIN Games ON Player_Libraries.game_id = Games.game_id;

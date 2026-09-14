@@ -1,0 +1,34 @@
+INSERT INTO Players (player_id, username, email) VALUES 
+(1, 'GamerGuy99', 'guy99@email.com'),
+(2, 'PixelQueen', 'pixelq@email.com'),
+(3, 'NoobMaster', 'noobm@email.com'),
+(4, 'SpeedRunner', 'speedy@email.com'),
+(5, 'CasualCarl', 'carl@email.com');
+
+INSERT INTO Developers (developer_id, name, country) VALUES 
+(1, 'Epic Studios', 'USA'),
+(2, 'CD Projekt', 'Poland'),
+(3, 'Nintendo', 'Japan'),
+(4, 'Valve', 'USA'),
+(5, 'Ubisoft', 'France');
+
+INSERT INTO Games (game_id, title, genre, developer_id, price) VALUES 
+(1, 'Cyber Quest', 'RPG', 2, 59.99),
+(2, 'Mario Kart 9', 'Racing', 3, 49.99),
+(3, 'Portal 3', 'Puzzle', 4, 29.99),
+(4, 'Assassin Strike', 'Action', 5, 59.99),
+(5, 'Fortnite 2', 'Action', 1, 0.00);
+
+INSERT INTO Player_Libraries (library_id, player_id, game_id, hours_played) VALUES 
+(1, 1, 1, 120),
+(2, 2, 3, 15),
+(3, 3, 5, 500),
+(4, 4, 2, 45),
+(5, 5, 4, 8);
+
+INSERT INTO Reviews (review_id, player_id, game_id, rating) VALUES 
+(1, 1, 1, 5),
+(2, 2, 3, 5),
+(3, 3, 5, 4),
+(4, 4, 2, 3),
+(5, 5, 4, 2);
